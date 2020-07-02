@@ -32,6 +32,10 @@ def start_sumo(show_gui):
     else:
         sumoBinary = checkBinary('sumo-gui')
 
-    traci.start([sumoBinary, "-c", "most.sumocfg", '--start'])
+    traci.start([sumoBinary, "-c", "most.sumocfg"])
 
 start_sumo(1)
+while traci.simulation.getMinExpectedNumber() > 0:
+    traci.simulationStep()
+traci.close(wait=False)
+sys.stdout.flush()

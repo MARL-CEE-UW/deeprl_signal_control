@@ -19,16 +19,30 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
 
-<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
+<configuration>
 
     <input>
         <net-file value="in/most.net.xml"/>
         <!-- <route-files value="in/most.rou.xml"/> -->
         <!-- <additional-files value="in/most.add.xml"/> -->
     </input>
+    <report>
+        <verbose value="true"/>
+        <duration-log.statistics value="true"/>
+        <log value="sim.log"/>
+    </report>
+
+    <output>
+		    <tripinfo-output value = "tripinfo1.xml" />
+	  </output>
 
     <time>
-        <begin value="0"/>
+        <begin value="10"/>
         <end value="3600"/>
     </time>
+
+    <guionly>
+		    <quit-on-end value = "False" />
+  	</guionly>
+
 </configuration>
